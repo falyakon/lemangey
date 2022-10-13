@@ -5,7 +5,8 @@
 
 
 html {
-font-family: helvetica rounded , Helvetica, Arial;
+font-family: Helvetica, Arial;
+font-weight: bold;
 background-color: white;
 user-select:none;
 -moz-user-select:none;
