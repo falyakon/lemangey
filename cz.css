@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/Inter-VariableFont_slnt,wght.ttf") format("ttf"),
+}
+
+html {
+font-family: "Inter";
+user-select:none;
+-moz-user-select:none;
+-webkit-user-select:none;
+-webkit-touch-callout:none;
+-ms-user-select:none;
+}
+
+body {
+background-color: white;
+color: #9C0512;
+transition: background-color .3s;
+}
+
+body[light-mode=dark] {
+background-color: #222;
+color: white;
+}
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 30px;
+}
+
+img {
+height: 50px;
+text-align: left;
+}
+
+.light-mode-button {
+background:0;
+border: 0;
+box-sizing: border-box;
+cursor: pointer;
+height: 20px;
+width: 50px;
+position: relative;
+border: 1px solid rgba(255,255,255,0);
+}
+  
+.light-mode-button:focus {
+outline:none; /* Not ideal for accessibility */
+}
+  
+.light-mode-button span:nth-child(1) {
+position: absolute;
+top:0;
+left:0;
+width: 50px;
+height:20px;
+border-radius: 20px;
+background-color: #d6d7db;
+box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 10%);
+transition: .3s;
+}
+ 
+.light-mode-button span:nth-child(2) {
+position: absolute;
+top:2.5px;
+left:2.5px;
+width: 15px;
+height: 15px;
+background-color: #fff;
+border-radius: 50%;
+box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 0%);
+transition: .3s;
+}
+
+body[light-mode="dark"] .light-mode-button span:nth-child(1){
+background-color: #d6d7db;
+color: white;
+box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 10%);
+}
+
+body[light-mode=dark] .light-mode-button span:nth-child(2) {
+left: 32.5px;
+background-color: #222;
+box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 0%);
+}
+
+p {
+font-size: 20px;
+font-weight: 700;
+}
+
+div {
+margin: auto;
+padding-bottom: 20px;
+text-align: center;
+}
+
+button.crou {	
+width: 225px;
+height: 75px;
+padding: 15px;
+margin-bottom: 30px;
+background-color: #E10512;
+box-shadow: 0 8px #9C0512;
+border: none;
+border-radius: 30px;
+color: white;
+font-family: "Inter";
+font-size: 25px;
+font-weight: 400;
+text-decoration: none;
+cursor: pointer;
+}
+
+button.crou:hover, button.crou:active {
+box-shadow: none;
+transform: translateY(8px)
+}
+
+body[light-mode="dark"] button.crou {
+color: white;
+}
+    
+span.counter {
+color: #E10512;
+font-size: 58px;
+font-weight: 600;
+}

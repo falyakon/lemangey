@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<link href="cz.css" rel="stylesheet">
+<link media="screen and (max-width: 1280px)" href="cz_mobile.css"  rel="stylesheet"> <!--qz Pour ceux qui ont une résolution inférieure à 1280px -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Le Mangey</title>
+		<link rel="icon" type="image/x-icon" href="cz.svg">
+	</head>
+
+<script>
+	(function() {
+		var start = new Date;
+		start.setHours(11, 30, 0); // 11:30
+	  
+		function pad(num) {
+		  return ("0" + parseInt(num)).substr(-2);
+		}
+	  
+		function tick() {
+		  var now = new Date;
+		  if (now > start) { // too late, go to tomorrow
+			start.setDate(start.getDate() + 1);
+		  }
+		  var remain = ((start - now) / 1000);
+		  var hh = pad((remain / 60 / 60) % 60);
+		  var mm = pad((remain / 60) % 60);
+		  var ss = pad(remain % 60);
+		  document.getElementById('time1').innerHTML =
+			hh + ":" + mm + ":" + ss;
+		setInterval(tick, 1000);
+		}
+
+		document.addEventListener('DOMContentLoaded', tick);
+
+	})();
+
+	(function() {
+		var start = new Date;
+		start.setHours(18, 30, 0); // 18:30
+	  
+	function pad(num) {
+		return ("0" + parseInt(num)).substr(-2);
+	}
+	 
+	function tick() {
+		var now = new Date;
+		if (now > start) { // too late, go to tomorrow
+		start.setDate(start.getDate() + 1);
+	}
+		var remain = ((start - now) / 1000);
+		var hh = pad((remain / 60 / 60) % 60);
+		var mm = pad((remain / 60) % 60);
+		var ss = pad(remain % 60);
+		document.getElementById('time2').innerHTML =
+		hh + ":" + mm + ":" + ss;
+		setInterval(tick, 1000);
+	}
+	  
+		document.addEventListener('DOMContentLoaded', tick);
+	  })();
+</script>
+
+<body>
+<script>
+	var app = document.getElementsByTagName("BODY")[0];
+	if (localStorage.lightMode == "dark") {
+		app.setAttribute("light-mode", "dark");
+	}
+</script>
+
+<header class="header">
+	<nav class="navbar">
+		<img src="cz.svg">
+		<button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
+	    <span></span>
+	    <span></span>
+		</button> 
+	</nav>
+</header>
+
+<div id="buttons">
+	<p>On mange quoi ?</p>
+	<a href="https://www.crous-strasbourg.fr/restaurant/resto-u-paul-appell/#menu-repas"><button class="crou">Paul Appell</button></a> <br/>
+	<a href="https://www.crous-strasbourg.fr/restaurant/resto-u-gallia/#menu-repas"><button class="crou">Gallia</button></a> <br/>
+	<a href="https://www.crous-strasbourg.fr/restaurant/resto-u-esplanade/#menu-repas"><button class="crou">Esplanade</button></a>
+</div>
+<div id="counter">
+	<p>Prochain Crous dans...</p>
+	<span id='time1' class="counter"></span> <br>
+	<span id='time2' class="counter"></span>
+</div>
+
+<script>
+	function toggle_light_mode() {
+		var app = document.getElementsByTagName("BODY")[0];
+		if (localStorage.lightMode == "dark") {
+		localStorage.lightMode = "light";
+		app.setAttribute("light-mode", "light");
+		} else {
+		localStorage.lightMode = "dark";
+		app.setAttribute("light-mode", "dark");
+		}		
+	}
+</script>
+
+<script>
+	var now = new Date;    
+	var currentHours = now.getHours()+now.getMinutes()/60;
+	if (currentHours>=11.5 && currentHours<18.5) {
+	document.getElementById("time1").style.display = "none";
+	document.getElementById("time2").style.display = "block";
+	} 
+	else {
+	document.getElementById("time1").style.display = "block";
+	document.getElementById("time2").style.display = "none";}
+</script>
+</body>
+</html>
