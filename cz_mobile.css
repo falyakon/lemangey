@@ -4,7 +4,7 @@ src: url("/Inter-VariableFont_slnt,wght.ttf") format("ttf"),
 }
 
 html {
-font-family: "Inter";
+font-family: "Inter", Helvetica, sans-serif;
 user-select:none;
 -moz-user-select:none;
 -webkit-user-select:none;
