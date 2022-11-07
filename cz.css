@@ -107,7 +107,7 @@ box-shadow: 0 8px #9C0512;
 border: none;
 border-radius: 30px;
 color: white;
-font-family: "Inter";
+font-family: "Inter", Helvetica, sans-serif;
 font-size: 25px;
 font-weight: 400;
 text-decoration: none;
